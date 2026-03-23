@@ -3,482 +3,756 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人工智能赋能教育最新实践案例（2026年3月）</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#36CFFB',
-                        accent: '#722ED1',
-                        success: '#00B42A',
-                        warning: '#FF7D00',
-                        danger: '#F53F3F',
-                        dark: '#1D2129',
-                        light: '#F2F3F5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'card': '0 4px 20px rgba(0, 0, 0, 0.08)',
-                        'card-hover': '0 8px 30px rgba(0, 0, 0, 0.12)',
-                    }
-                }
+    <title>AI教育案例日报 | 2026-03-23</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #1557b0;
+            --secondary: #00c853;
+            --accent: #ff6d00;
+            --bg: #f0f4ff;
+            --card-bg: #ffffff;
+            --text-dark: #1a1a2e;
+            --text-light: #666;
+            --border: #e0e8ff;
+            --shadow: 0 4px 24px rgba(26,115,232,0.12);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 8px 20px;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .header h1 span {
+            background: linear-gradient(90deg, #ffd700, #ff6d00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .meta-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: var(--radius);
+            padding: 12px 24px;
+            color: white;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .meta-item .num {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffd700;
+        }
+
+        .meta-item .label {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px 32px;
+            margin-bottom: 32px;
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            flex-wrap: wrap;
+        }
+
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg);
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-size: 13px;
+            color: var(--text-dark);
+            white-space: nowrap;
+            border: 1px solid var(--border);
+        }
+
+        .stat-pill .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* Case Cards */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(26,115,232,0.2);
+        }
+
+        .card-header {
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .case-num {
+            background: linear-gradient(135deg, var(--primary), #764ba2);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .case-num.hot {
+            background: linear-gradient(135deg, var(--accent), #e53935);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,109,0,0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(255,109,0,0); }
+        }
+
+        .source-tag {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .source-tag.gov { background: #e3f2fd; color: #1565c0; }
+        .source-tag.news { background: #e8f5e9; color: #2e7d32; }
+        .source-tag.media { background: #fff3e0; color: #e65100; }
+
+        .card-body {
+            padding: 20px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .case-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .case-summary {
+            font-size: 13.5px;
+            color: var(--text-light);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-tag {
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .tag-deepseek { background: #e8f5e9; color: #2e7d32; }
+        .tag-llm { background: #f3e5f5; color: #7b1fa2; }
+        .tag-cv { background: #e3f2fd; color: #1565c0; }
+        .tag-nlp { background: #fff8e1; color: #f57f17; }
+        .tag-vr { background: #fce4ec; color: #c62828; }
+        .tag-ai { background: #e0f2f1; color: #00695c; }
+        .tag-multimodal { background: #fafafa; color: #424242; border: 1px solid #e0e0e0; }
+        .tag-robot { background: #f1f8e9; color: #558b2f; }
+
+        .card-footer {
+            padding: 14px 24px;
+            background: #fafbfc;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .date-info {
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .case-link {
+            font-size: 12px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
+        }
+
+        .case-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Source breakdown */
+        .source-breakdown {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px 32px;
+            margin-bottom: 32px;
+        }
+
+        .source-breakdown h3 {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .source-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .source-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .source-item .check {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            padding: 24px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .meta-item {
+                padding: 10px 16px;
+                min-width: 100px;
+            }
+
+            .meta-item .num {
+                font-size: 22px;
+            }
+
+            .header-meta {
+                gap: 16px;
+            }
+
+            .card-header {
+                padding: 16px 18px 12px;
+            }
+
+            .card-body {
+                padding: 16px 18px;
+            }
+
+            .card-footer {
+                padding: 12px 18px;
             }
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-gradient {
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-            }
-            .bg-grid {
-                background-size: 20px 20px;
-                background-image: 
-                    linear-gradient(to right, rgba(22, 93, 255, 0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(22, 93, 255, 0.05) 1px, transparent 1px);
-            }
-            .card-transition {
-                transition: all 0.3s ease;
-            }
-            .card-transition:hover {
-                transform: translateY(-5px);
-            }
+
+        /* Filter tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid transparent;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            transition: all 0.2s;
+        }
+
+        .filter-tab.active {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        .filter-tab:hover:not(.active) {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Scroll animation */
+        .case-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .case-card:nth-child(1) { animation-delay: 0.05s; }
+        .case-card:nth-child(2) { animation-delay: 0.1s; }
+        .case-card:nth-child(3) { animation-delay: 0.15s; }
+        .case-card:nth-child(4) { animation-delay: 0.2s; }
+        .case-card:nth-child(5) { animation-delay: 0.25s; }
+        .case-card:nth-child(6) { animation-delay: 0.3s; }
+        .case-card:nth-child(7) { animation-delay: 0.35s; }
+        .case-card:nth-child(8) { animation-delay: 0.4s; }
+        .case-card:nth-child(9) { animation-delay: 0.45s; }
+        .case-card:nth-child(10) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-dark">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-primary to-accent text-white py-16 px-4 relative overflow-hidden">
-        <div class="bg-grid absolute inset-0 opacity-30"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex items-center justify-center mb-4">
-                <i class="fa fa-robot text-4xl mr-4"></i>
-                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold">AI+教育 最新实践案例</h1>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-badge">
+                <span>🤖</span>
+                <span>AI 教育案例日报</span>
+                <span style="opacity:0.6">|</span>
+                <span>每日自动更新</span>
             </div>
-            <p class="text-center text-xl opacity-90 max-w-3xl mx-auto">
-                汇集2026年最新人工智能赋能教育的中小学实践案例与政策落地成果
+            <h1>人工智能 + 教育实践 <span>每日速报</span></h1>
+            <p style="color:rgba(255,255,255,0.85); font-size:16px; margin-top:4px;">
+                聚焦政策动态 · 追踪前沿应用 · 挖掘真实案例
             </p>
-            <div class="flex justify-center mt-8">
-                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
-                    <i class="fa fa-calendar mr-2"></i>更新时间：2026年3月23日
-                </span>
-            </div>
-        </div>
-    </header>
 
-    <!-- Stats Section -->
-    <section class="py-12 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
-                    <div class="text-primary text-3xl font-bold mb-2">10+</div>
-                    <div class="text-gray-600">精选实践案例</div>
+            <div class="header-meta">
+                <div class="meta-item">
+                    <div class="num">2026-03-23</div>
+                    <div class="label">📅 报道日期</div>
                 </div>
-                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
-                    <div class="text-success text-3xl font-bold mb-2">8+</div>
-                    <div class="text-gray-600">省市区域覆盖</div>
+                <div class="meta-item">
+                    <div class="num">10</div>
+                    <div class="label">📰 精选案例</div>
                 </div>
-                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
-                    <div class="text-warning text-3xl font-bold mb-2">5+</div>
-                    <div class="text-gray-600">AI技术类型</div>
+                <div class="meta-item">
+                    <div class="num">8</div>
+                    <div class="label">🏛️ 政府/权威</div>
                 </div>
-                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
-                    <div class="text-accent text-3xl font-bold mb-2">3</div>
-                    <div class="text-gray-600">教育学段覆盖</div>
+                <div class="meta-item">
+                    <div class="num">2</div>
+                    <div class="label">📺 媒体报道</div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Cases Section -->
-    <section class="py-16 px-4 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">最新实践案例</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Case 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-400 relative">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fa fa-university text-white text-6xl opacity-30"></i>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-primary">
-                            中小学全学段
-                        </div>
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <div class="filter-tab active" onclick="filterCards('all', this)">全部案例</div>
+            <div class="filter-tab" onclick="filterCards('gov', this)">政府政策</div>
+            <div class="filter-tab" onclick="filterCards('school', this)">学校实践</div>
+            <div class="filter-tab" onclick="filterCards('news', this)">新闻报道</div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-pill"><div class="dot" style="background:#764ba2"></div> DeepSeek 大模型</div>
+            <div class="stat-pill"><div class="dot" style="background:#1565c0"></div> 多模态大模型</div>
+            <div class="stat-pill"><div class="dot" style="background:#2e7d32"></div> AI智能备课</div>
+            <div class="stat-pill"><div class="dot" style="background:#e65100"></div> 智慧课堂</div>
+            <div class="stat-pill"><div class="dot" style="background:#7b1fa2"></div> AI智能体</div>
+            <div class="stat-pill"><div class="dot" style="background:#00695c"></div> 职业教育AI</div>
+            <div class="stat-pill"><div class="dot" style="background:#c62828"></div> VR/AR实训</div>
+            <div class="stat-pill"><div class="dot" style="background:#558b2f"></div> 机器人</div>
+        </div>
+
+        <!-- Cases Grid -->
+        <div class="cases-grid" id="casesGrid">
+
+            <!-- Case 1 -->
+            <div class="case-card" data-category="gov" data-tags="deepseek llm ai">
+                <div class="card-header">
+                    <div class="case-num hot">🔥 1</div>
+                    <span class="source-tag gov">河南省教育厅</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">河南省"人工智能+教育"三年行动计划（2025—2027年）</div>
+                    <div class="case-summary">
+                        河南省教育厅印发重磅行动计划，明确基础教育探索、职业教育突破、高等教育推广的总体定位。将建设智慧教育平台、AI助教/助学/助管系统、无感知AI数字技术课堂，目标到2027年建成完整AI教育生态。河南中医药大学AI助教、焦作市实验小学智慧研修等已率先落地。
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">兰州市人工智能赋能教育高质量发展实践</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-4">
-                            <i class="fa fa-newspaper-o mr-2"></i>
-                            <span>来源：兰州新闻网 | 2026-03-23</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            兰州市以《教育数字化攻坚行动计划（2025-2027年）》为引领，聚焦课程、教学、师资、环境四大核心，打造了通渭路小学、第八中学、第五十一中学等一批标杆学校，构建了从小学到高中的AI教育全链条体系。
-                        </p>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">K12全学段</span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">AI编程课程</span>
-                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">智慧课堂</span>
-                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">生涯规划</span>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">教育大模型</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">数字人助教</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能数据分析</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">VR/AR沉浸教学</span>
-                            </div>
-                        </div>
-                        <a href="https://www.lzbs.com.cn/lanzhounews/2026-03/23/content_506758420.htm" target="_blank" class="inline-flex items-center text-primary hover:underline">
-                            查看原文 <i class="fa fa-external-link ml-2"></i>
-                        </a>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-deepseek">DeepSeek</span>
+                        <span class="tech-tag tag-ai">AI教育平台</span>
+                        <span class="tech-tag tag-vr">VR实训</span>
+                        <span class="tech-tag tag-multimodal">多模态</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-04-02</div>
+                    <a href="https://www.henan.gov.cn/2025/04-02/3144306.html" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
 
-                <!-- Case 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-400 relative">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fa fa-graduation-cap text-white text-6xl opacity-30"></i>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-accent">
-                            中小学全学段
-                        </div>
+            <!-- Case 2 -->
+            <div class="case-card" data-category="school" data-tags="deepseek llm">
+                <div class="card-header">
+                    <div class="case-num hot">🔥 2</div>
+                    <span class="source-tag media">人民日报·网易</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">杭州职业技术学院："AI+助教、助学、助训、助管"一体化教学新模式</div>
+                    <div class="case-summary">
+                        杭州职业技术学院联合浙江大学、西子电梯、凌迪科技打造"数实融合"教学空间。5G+AR远程维保、井道无人机巡检、服装"虚拟工厂"等实训场景全面AI化。通过"AI+助教"实现课情识别与学情监测，"AI+助学"提供24小时个性化学习推荐，"AI+助管"生成操作安全评估报告。
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">上海市2026新学期AI教育全面落地</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-4">
-                            <i class="fa fa-newspaper-o mr-2"></i>
-                            <span>来源：上海教育 | 2026-03-02</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            上海市将人工智能教育全面融入日常课程，义务教育阶段四年级、七年级开设《人工智能基础》地方课程，每周1课时，高中阶段深化AI教学内容，构建了从基础到进阶的完整AI教育体系。
-                        </p>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">K12全学段</span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">AI基础课程</span>
-                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">跨学科项目</span>
-                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">STEM教育</span>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">图像识别</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">编程教育</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能实验室</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">机器人教育</span>
-                            </div>
-                        </div>
-                        <a href="https://sghexport.shobserver.com/html/baijiahao/2026/03/02/1714987.html" target="_blank" class="inline-flex items-center text-primary hover:underline">
-                            查看原文 <i class="fa fa-external-link ml-2"></i>
-                        </a>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-vr">5G+AR实训</span>
+                        <span class="tech-tag tag-llm">AI智能体</span>
+                        <span class="tech-tag tag-ai">学情监测</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2026-03-22</div>
+                    <a href="https://www.163.com/dy/article/JS56JHAL0514R9OJ.html" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
 
-                <!-- Case 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
-                    <div class="h-48 bg-gradient-to-r from-orange-500 to-yellow-400 relative">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fa fa-map-marker text-white text-6xl opacity-30"></i>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-warning">
-                            区域政策试点
-                        </div>
+            <!-- Case 3 -->
+            <div class="case-card" data-category="school" data-tags="deepseek llm">
+                <div class="card-header">
+                    <div class="case-num">3</div>
+                    <span class="source-tag news">厦门广电网</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">厦门双十中学：DeepSeek大模型校园私有化部署</div>
+                    <div class="case-summary">
+                        福建省厦门双十中学成功实现DeepSeek大模型在校园内的私有化部署。AI可在两分钟内完成高中物理难题解析并生成演示动画。教师还探索AI答疑室、AI编程辅助及动画速度微调等创新应用。私有化部署保障数据安全，深度融入备课—授课—作业全流程。
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">重庆市渝中区启动教育部人工智能赋能教育行动</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-4">
-                            <i class="fa fa-newspaper-o mr-2"></i>
-                            <span>来源：央广网 | 2026-03-18</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            渝中区作为教育部试点区，发布《人工智能赋能教育行动试点方案（2026—2027年）》，围绕"筑基赋能、融合创新、防护护航"三大行动，部署九项具体任务，构建AI教育全链条应用体系。
-                        </p>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">区域教育治理</span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">智慧校园建设</span>
-                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">教师能力提升</span>
-                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">备教学评管研一体化</span>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">教育大数据</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能评测系统</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">AI实验室标准化</span>
-                            </div>
-                        </div>
-                        <a href="https://baijiahao.baidu.com/s?id=1859987099201792618" target="_blank" class="inline-flex items-center text-primary hover:underline">
-                            查看原文 <i class="fa fa-external-link ml-2"></i>
-                        </a>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-deepseek">DeepSeek</span>
+                        <span class="tech-tag tag-llm">大模型部署</span>
+                        <span class="tech-tag tag-cv">AI解题</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-03-03</div>
+                    <a href="https://www.xmtv.cn/xmtv/2025-03-03/a74ac9b4bbd85193.html" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
 
-                <!-- Case 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
-                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-400 relative">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fa fa-book text-white text-6xl opacity-30"></i>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-success">
-                            学科应用
-                        </div>
+            <!-- Case 4 -->
+            <div class="case-card" data-category="school" data-tags="deepseek ai">
+                <div class="card-header">
+                    <div class="case-num">4</div>
+                    <span class="source-tag news">安青网</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">亳州市第三十二中学：DeepSeek赋能教师智能备课</div>
+                    <div class="case-summary">
+                        亳州三十二中通过DeepSeek系统化管理提升教师备课质量。AI为教师提供教学设计智能化支持，深度学习算法重构备课全流程。备课效率和质量显著提升，进而带动课堂、作业、考试等环节形成良性循环，激活学校教学生态。
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">AI赋能语文课堂20个可落地场景实践</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-4">
-                            <i class="fa fa-newspaper-o mr-2"></i>
-                            <span>来源：百度百家号 | 2026-03-01</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            一线语文教师亲测的AI教学方案，涵盖写作批改、个性化阅读、古诗文教学三大维度20个具体应用场景，可帮助教师每周节省8.2小时重复劳动时间，学生作文优秀率提升18.6%。
-                        </p>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">语文教学</span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">智能作文批改</span>
-                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">个性化阅读推荐</span>
-                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">古诗文情境教学</span>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">自然语言处理</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">情感分析</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能推荐算法</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">AR/VR沉浸体验</span>
-                            </div>
-                        </div>
-                        <a href="https://baijiahao.baidu.com/s?id=1858425264878695853" target="_blank" class="inline-flex items-center text-primary hover:underline">
-                            查看原文 <i class="fa fa-external-link ml-2"></i>
-                        </a>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-deepseek">DeepSeek</span>
+                        <span class="tech-tag tag-ai">智能备课</span>
+                        <span class="tech-tag tag-nlp">NLP</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-03-05</div>
+                    <a href="https://www.ahyouth.com/news/20250305/1753774.shtml" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
 
-                <!-- Case 5 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
-                    <div class="h-48 bg-gradient-to-r from-red-500 to-rose-400 relative">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fa fa-lightbulb-o text-white text-6xl opacity-30"></i>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-danger">
-                            课程创新
-                        </div>
+            <!-- Case 5 -->
+            <div class="case-card" data-category="school" data-tags="llm ai">
+                <div class="card-header">
+                    <div class="case-num">5</div>
+                    <span class="source-tag news">中国科技网</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">南昌大学"香樟智友"教育教学智能体正式上线</div>
+                    <div class="case-summary">
+                        南昌大学依托大模型技术推出校园AI教育教学智能体"香樟智友"。该智能体具备多学科知识问答、课程学习辅助、教学资源推荐等功能，为师生提供全天候智能化教育教学服务，标志高校AI教育应用迈入新阶段。
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">2026小学课程周峰会发布AI赋能九大学习方式新样态</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-4">
-                            <i class="fa fa-newspaper-o mr-2"></i>
-                            <span>来源：新校长传媒 | 2026-03-16</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            峰会聚焦"AI赋能与学习进化"，提出AI时代的九大学习方式新样态：任务式学习、智能辅助学习、学科深度学习、跨学科联动学习、游戏化学习、场景化学习等，助力教师构建面向AI时代的教学新常态。
-                        </p>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">小学教育</span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">学习方式变革</span>
-                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">课程设计</span>
-                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">教学模式创新</span>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">学习分析技术</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能学习伙伴</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">自适应学习系统</span>
-                            </div>
-                        </div>
-                        <a href="https://mp.weixin.qq.com/s?__biz=MjM5NjAwODI2OQ==&mid=2653894095&idx=2&sn=636c07a7e79e6f1bfd5979e7ce35262e" target="_blank" class="inline-flex items-center text-primary hover:underline">
-                            查看原文 <i class="fa fa-external-link ml-2"></i>
-                        </a>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-llm">大模型智能体</span>
+                        <span class="tech-tag tag-nlp">知识问答</span>
+                        <span class="tech-tag tag-ai">AI助教</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-03-01</div>
+                    <a href="https://www.stdaily.com/web/gdxw/2025-03/01/content_303374.html" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
 
-                <!-- Case 6 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
-                    <div class="h-48 bg-gradient-to-r from-indigo-500 to-blue-400 relative">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fa fa-cloud text-white text-6xl opacity-30"></i>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-primary">
-                            国家级平台
-                        </div>
+            <!-- Case 6 -->
+            <div class="case-card" data-category="school" data-tags="ai cv">
+                <div class="card-header">
+                    <div class="case-num">6</div>
+                    <span class="source-tag news">哈尔滨新闻网</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">哈尔滨市中小学校：AI教学工具开启新学期智慧课堂</div>
+                    <div class="case-summary">
+                        哈尔滨多所中小学新学期全面引入AI教育工具。小学数学课上，AI生成的代码控制立体图形旋转变换，让学生直观理解"观察角度与图形关系"。AI实时分析学生答题数据，自动推送个性化分层练习，实现精准教学反馈，显著提升学习兴趣与自信心。
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">国家中小学智慧教育平台AI工具全面升级</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-4">
-                            <i class="fa fa-newspaper-o mr-2"></i>
-                            <span>来源：教育部 | 2026-03-01</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            国家中小学智慧教育平台内置AI备课助手、智能组卷、学情分析报告等功能，覆盖小初高全学段语文资源库，同时国家教育资源公共服务平台提供丰富的AI教学案例库、工具评测报告和教师培训课程。
-                        </p>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">K12全学段</span>
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">教师备课</span>
-                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">智能组卷</span>
-                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">学情分析</span>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">知识图谱</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能推荐</span>
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">大数据分析</span>
-                            </div>
-                        </div>
-                        <a href="https://basic.smartedu.cn/" target="_blank" class="inline-flex items-center text-primary hover:underline">
-                            访问平台 <i class="fa fa-external-link ml-2"></i>
-                        </a>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-cv">AI图形生成</span>
+                        <span class="tech-tag tag-ai">分层练习</span>
+                        <span class="tech-tag tag-nlp">学情分析</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-03-10</div>
+                    <a href="https://www.my399.com/2025/03-10/z1zQEMjk.html" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
+
+            <!-- Case 7 -->
+            <div class="case-card" data-category="school" data-tags="deepseek ai llm">
+                <div class="card-header">
+                    <div class="case-num">7</div>
+                    <span class="source-tag news">网易订阅</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">科大实验校区：多工具融合AI全流程教学法</div>
+                    <div class="case-summary">
+                        电子科大实验清水河校区开展AI教学全面改革。英语教师使用Grammarly智能批改、DeepSeek备课、豆包AI辅助教学场景设计。涌现AI双轨应用模型（穆锦宣）、AI备课组合拳（新教师培训）、"豆包AI全流程教学法"（李泽光）等创新实践，实现智能化分层教学与定制化阅读文本生成。
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-deepseek">DeepSeek</span>
+                        <span class="tech-tag tag-nlp">Grammarly</span>
+                        <span class="tech-tag tag-ai">豆包AI</span>
+                        <span class="tech-tag tag-multimodal">多工具融合</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-03-27</div>
+                    <a href="https://www.163.com/dy/article/JRLV9GBQ05366AT6.html" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
+
+            <!-- Case 8 -->
+            <div class="case-card" data-category="school" data-tags="ai">
+                <div class="card-header">
+                    <div class="case-num">8</div>
+                    <span class="source-tag news">河北网络广播电视台</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">秦皇岛经开区：AI赋能智慧课堂让教学"活"起来</div>
+                    <div class="case-summary">
+                        秦皇岛经济技术开发区多所学校推进AI赋能智慧课堂建设。智能教学平台实现师生实时互动、AI自动批改、个性化学习路径规划等核心功能。AI精准分析学生薄弱环节，动态调整教学策略，让传统课堂向数据驱动型智慧课堂全面转型。
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-ai">AI智慧课堂</span>
+                        <span class="tech-tag tag-cv">自动批改</span>
+                        <span class="tech-tag tag-nlp">学情诊断</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-03-25</div>
+                    <a href="https://www.hebtv.com/0/0rmhlm/qy/zhb/sxxw/11828171.shtml" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
+
+            <!-- Case 9 -->
+            <div class="case-card" data-category="gov" data-tags="ai">
+                <div class="card-header">
+                    <div class="case-num">9</div>
+                    <span class="source-tag gov">中国政府网</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">教育部部署加强中小学人工智能教育工作</div>
+                    <div class="case-summary">
+                        教育部办公厅正式印发通知，探索中小学人工智能教育实施途径。要求坚持立德树人、以人为本，遵循教育规律和人才成长规律。鼓励各地将AI教育纳入课后服务和研学实践，推进基于任务式、项目式、问题式的教学改革，培养面向未来的创新型人才。
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-ai">AI教育政策</span>
+                        <span class="tech-tag tag-multimodal">综合实践</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2024-12-03</div>
+                    <a href="https://www.gov.cn/lianbo/bumen/202412/content_6990729.htm" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
+
+            <!-- Case 10 -->
+            <div class="case-card" data-category="school" data-tags="robot ai llm">
+                <div class="card-header">
+                    <div class="case-num">10</div>
+                    <span class="source-tag gov">广州市黄埔区人民政府</span>
+                </div>
+                <div class="card-body">
+                    <div class="case-title">中国教科院专家走进怡园小学：AI机器人"双师"课堂实践</div>
+                    <div class="case-summary">
+                        中国教科院数字教育研究所专家团队走进广州市黄埔区怡园小学调研AI教育实践。专家观摩了AI机器人"双师"课堂（真人教师+AI机器人协同授课）和无感知AI数字技术英语课例。学校智能科创室展示多个人工智能教育应用场景，为区域AI教育普及提供参考范本。
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag tag-robot">AI机器人</span>
+                        <span class="tech-tag tag-vr">双师课堂</span>
+                        <span class="tech-tag tag-ai">无感知AI</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="date-info">📅 2025-01-20</div>
+                    <a href="http://www.hp.gov.cn/gzjg/qzfgwhgzbm/qjyj/xxgk/content/post_10084854.html" target="_blank" class="case-link">查看原文 →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Source Breakdown -->
+        <div class="source-breakdown">
+            <h3>📋 案例来源统计</h3>
+            <div class="source-list">
+                <div class="source-item"><span class="check">✓</span> 河南省教育厅（政府官网）</div>
+                <div class="source-item"><span class="check">✓</span> 中国政府网（中央门户）</div>
+                <div class="source-item"><span class="check">✓</span> 广州市黄埔区人民政府</div>
+                <div class="source-item"><span class="check">✓</span> 厦门广电网（权威媒体）</div>
+                <div class="source-item"><span class="check">✓</span> 哈尔滨新闻网</div>
+                <div class="source-item"><span class="check">✓</span> 中国科技网（科技日报社）</div>
+                <div class="source-item"><span class="check">✓</span> 河北网络广播电视台</div>
+                <div class="source-item"><span class="check">✓</span> 安青网（团省委主管）</div>
+                <div class="source-item"><span class="check">✓</span> 网易（人民日报转载）</div>
             </div>
         </div>
-    </section>
 
-    <!-- Policy Section -->
-    <section class="py-16 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">最新政策导向</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-light rounded-xl p-8 card-transition shadow-card">
-                    <div class="flex items-start">
-                        <div class="bg-primary/10 rounded-full p-3 mr-4">
-                            <i class="fa fa-file-text-o text-primary text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">2026年全国教育工作会议</h3>
-                            <p class="text-gray-700 mb-4">
-                                将"扎实推进人工智能赋能教育"作为重点任务之一，明确要求推动人工智能技术深度融入教育教学全过程，提升教育质量和效率。
-                            </p>
-                            <div class="text-sm text-gray-500">
-                                <i class="fa fa-calendar mr-2"></i>2026年1月
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-light rounded-xl p-8 card-transition shadow-card">
-                    <div class="flex items-start">
-                        <div class="bg-success/10 rounded-full p-3 mr-4">
-                            <i class="fa fa-graduation-cap text-success text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-3">教育部基础教育重点工作部署会</h3>
-                            <p class="text-gray-700 mb-4">
-                                明确人工智能将从"试点探索"升级为"系统融入"，正式进入中小学课程标准、日常教学和评价体系，要求2026年全国中小学AI智能终端普及率超过70%。
-                            </p>
-                            <div class="text-sm text-gray-500">
-                                <i class="fa fa-calendar mr-2"></i>2026年2月
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                🤖 AI教育案例日报 | 数据来源：教育部、中国政府网、各省教育厅官网、权威媒体<br>
+                📅 生成时间：2026-03-23 | <a href="https://github.com/imafrican/ai-education-cases" target="_blank">🌐 GitHub Pages 在线访问</a>
+            </p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center">
-                        <i class="fa fa-robot text-2xl mr-3"></i>
-                        <span class="text-xl font-bold">AI+教育实践案例库</span>
-                    </div>
-                    <p class="text-gray-400 mt-2">汇集最新AI教育实践，推动教育数字化转型</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fa fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fa fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fa fa-linkedin text-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                © 2026 AI+教育实践案例库 | 数据来源于公开官方渠道 | 本网站仅供学习参考
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Back to Top -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white rounded-full p-3 shadow-lg opacity-0 transition-opacity duration-300">
-        <i class="fa fa-arrow-up"></i>
-    </button>
+    </div>
 
     <script>
-        // Back to top button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.replace('opacity-0', 'opacity-100');
-            } else {
-                backToTop.classList.replace('opacity-100', 'opacity-0');
-            }
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add animation to cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fadeIn');
-                    observer.unobserve(entry.target);
+        function filterCards(category, btn) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const cards = document.querySelectorAll('.case-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.card-transition').forEach(card => {
-            observer.observe(card);
-        });
+        }
     </script>
 </body>
 </html>
