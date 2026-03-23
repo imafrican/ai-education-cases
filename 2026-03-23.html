@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人工智能赋能教育最新实践案例（2026年3月）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFFB',
+                        accent: '#722ED1',
+                        success: '#00B42A',
+                        warning: '#FF7D00',
+                        danger: '#F53F3F',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                        'card-hover': '0 8px 30px rgba(0, 0, 0, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            .bg-grid {
+                background-size: 20px 20px;
+                background-image: 
+                    linear-gradient(to right, rgba(22, 93, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(22, 93, 255, 0.05) 1px, transparent 1px);
+            }
+            .card-transition {
+                transition: all 0.3s ease;
+            }
+            .card-transition:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary to-accent text-white py-16 px-4 relative overflow-hidden">
+        <div class="bg-grid absolute inset-0 opacity-30"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex items-center justify-center mb-4">
+                <i class="fa fa-robot text-4xl mr-4"></i>
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold">AI+教育 最新实践案例</h1>
+            </div>
+            <p class="text-center text-xl opacity-90 max-w-3xl mx-auto">
+                汇集2026年最新人工智能赋能教育的中小学实践案例与政策落地成果
+            </p>
+            <div class="flex justify-center mt-8">
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    <i class="fa fa-calendar mr-2"></i>更新时间：2026年3月23日
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="py-12 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
+                    <div class="text-primary text-3xl font-bold mb-2">10+</div>
+                    <div class="text-gray-600">精选实践案例</div>
+                </div>
+                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
+                    <div class="text-success text-3xl font-bold mb-2">8+</div>
+                    <div class="text-gray-600">省市区域覆盖</div>
+                </div>
+                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
+                    <div class="text-warning text-3xl font-bold mb-2">5+</div>
+                    <div class="text-gray-600">AI技术类型</div>
+                </div>
+                <div class="bg-light rounded-xl p-6 text-center card-transition shadow-card">
+                    <div class="text-accent text-3xl font-bold mb-2">3</div>
+                    <div class="text-gray-600">教育学段覆盖</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">最新实践案例</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-400 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa fa-university text-white text-6xl opacity-30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-primary">
+                            中小学全学段
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">兰州市人工智能赋能教育高质量发展实践</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-newspaper-o mr-2"></i>
+                            <span>来源：兰州新闻网 | 2026-03-23</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            兰州市以《教育数字化攻坚行动计划（2025-2027年）》为引领，聚焦课程、教学、师资、环境四大核心，打造了通渭路小学、第八中学、第五十一中学等一批标杆学校，构建了从小学到高中的AI教育全链条体系。
+                        </p>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">K12全学段</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">AI编程课程</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">智慧课堂</span>
+                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">生涯规划</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">教育大模型</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">数字人助教</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能数据分析</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">VR/AR沉浸教学</span>
+                            </div>
+                        </div>
+                        <a href="https://www.lzbs.com.cn/lanzhounews/2026-03/23/content_506758420.htm" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            查看原文 <i class="fa fa-external-link ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-400 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa fa-graduation-cap text-white text-6xl opacity-30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-accent">
+                            中小学全学段
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">上海市2026新学期AI教育全面落地</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-newspaper-o mr-2"></i>
+                            <span>来源：上海教育 | 2026-03-02</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            上海市将人工智能教育全面融入日常课程，义务教育阶段四年级、七年级开设《人工智能基础》地方课程，每周1课时，高中阶段深化AI教学内容，构建了从基础到进阶的完整AI教育体系。
+                        </p>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">K12全学段</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">AI基础课程</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">跨学科项目</span>
+                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">STEM教育</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">图像识别</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">编程教育</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能实验室</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">机器人教育</span>
+                            </div>
+                        </div>
+                        <a href="https://sghexport.shobserver.com/html/baijiahao/2026/03/02/1714987.html" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            查看原文 <i class="fa fa-external-link ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
+                    <div class="h-48 bg-gradient-to-r from-orange-500 to-yellow-400 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa fa-map-marker text-white text-6xl opacity-30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-warning">
+                            区域政策试点
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">重庆市渝中区启动教育部人工智能赋能教育行动</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-newspaper-o mr-2"></i>
+                            <span>来源：央广网 | 2026-03-18</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            渝中区作为教育部试点区，发布《人工智能赋能教育行动试点方案（2026—2027年）》，围绕"筑基赋能、融合创新、防护护航"三大行动，部署九项具体任务，构建AI教育全链条应用体系。
+                        </p>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">区域教育治理</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">智慧校园建设</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">教师能力提升</span>
+                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">备教学评管研一体化</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">教育大数据</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能评测系统</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">AI实验室标准化</span>
+                            </div>
+                        </div>
+                        <a href="https://baijiahao.baidu.com/s?id=1859987099201792618" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            查看原文 <i class="fa fa-external-link ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-400 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa fa-book text-white text-6xl opacity-30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-success">
+                            学科应用
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">AI赋能语文课堂20个可落地场景实践</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-newspaper-o mr-2"></i>
+                            <span>来源：百度百家号 | 2026-03-01</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            一线语文教师亲测的AI教学方案，涵盖写作批改、个性化阅读、古诗文教学三大维度20个具体应用场景，可帮助教师每周节省8.2小时重复劳动时间，学生作文优秀率提升18.6%。
+                        </p>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">语文教学</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">智能作文批改</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">个性化阅读推荐</span>
+                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">古诗文情境教学</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">自然语言处理</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">情感分析</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能推荐算法</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">AR/VR沉浸体验</span>
+                            </div>
+                        </div>
+                        <a href="https://baijiahao.baidu.com/s?id=1858425264878695853" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            查看原文 <i class="fa fa-external-link ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
+                    <div class="h-48 bg-gradient-to-r from-red-500 to-rose-400 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa fa-lightbulb-o text-white text-6xl opacity-30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-danger">
+                            课程创新
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">2026小学课程周峰会发布AI赋能九大学习方式新样态</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-newspaper-o mr-2"></i>
+                            <span>来源：新校长传媒 | 2026-03-16</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            峰会聚焦"AI赋能与学习进化"，提出AI时代的九大学习方式新样态：任务式学习、智能辅助学习、学科深度学习、跨学科联动学习、游戏化学习、场景化学习等，助力教师构建面向AI时代的教学新常态。
+                        </p>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">小学教育</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">学习方式变革</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">课程设计</span>
+                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">教学模式创新</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">学习分析技术</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能学习伙伴</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">自适应学习系统</span>
+                            </div>
+                        </div>
+                        <a href="https://mp.weixin.qq.com/s?__biz=MjM5NjAwODI2OQ==&mid=2653894095&idx=2&sn=636c07a7e79e6f1bfd5979e7ce35262e" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            查看原文 <i class="fa fa-external-link ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-card card-transition hover:shadow-card-hover">
+                    <div class="h-48 bg-gradient-to-r from-indigo-500 to-blue-400 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa fa-cloud text-white text-6xl opacity-30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-primary">
+                            国家级平台
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">国家中小学智慧教育平台AI工具全面升级</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-newspaper-o mr-2"></i>
+                            <span>来源：教育部 | 2026-03-01</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            国家中小学智慧教育平台内置AI备课助手、智能组卷、学情分析报告等功能，覆盖小初高全学段语文资源库，同时国家教育资源公共服务平台提供丰富的AI教学案例库、工具评测报告和教师培训课程。
+                        </p>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">应用场景：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs">K12全学段</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs">教师备课</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">智能组卷</span>
+                                <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full text-xs">学情分析</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="text-sm font-medium text-gray-600 mb-2">AI技术：</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">知识图谱</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">智能推荐</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">大数据分析</span>
+                            </div>
+                        </div>
+                        <a href="https://basic.smartedu.cn/" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                            访问平台 <i class="fa fa-external-link ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">最新政策导向</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-light rounded-xl p-8 card-transition shadow-card">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 rounded-full p-3 mr-4">
+                            <i class="fa fa-file-text-o text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">2026年全国教育工作会议</h3>
+                            <p class="text-gray-700 mb-4">
+                                将"扎实推进人工智能赋能教育"作为重点任务之一，明确要求推动人工智能技术深度融入教育教学全过程，提升教育质量和效率。
+                            </p>
+                            <div class="text-sm text-gray-500">
+                                <i class="fa fa-calendar mr-2"></i>2026年1月
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-light rounded-xl p-8 card-transition shadow-card">
+                    <div class="flex items-start">
+                        <div class="bg-success/10 rounded-full p-3 mr-4">
+                            <i class="fa fa-graduation-cap text-success text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">教育部基础教育重点工作部署会</h3>
+                            <p class="text-gray-700 mb-4">
+                                明确人工智能将从"试点探索"升级为"系统融入"，正式进入中小学课程标准、日常教学和评价体系，要求2026年全国中小学AI智能终端普及率超过70%。
+                            </p>
+                            <div class="text-sm text-gray-500">
+                                <i class="fa fa-calendar mr-2"></i>2026年2月
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fa fa-robot text-2xl mr-3"></i>
+                        <span class="text-xl font-bold">AI+教育实践案例库</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">汇集最新AI教育实践，推动教育数字化转型</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                © 2026 AI+教育实践案例库 | 数据来源于公开官方渠道 | 本网站仅供学习参考
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back to Top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white rounded-full p-3 shadow-lg opacity-0 transition-opacity duration-300">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.replace('opacity-0', 'opacity-100');
+            } else {
+                backToTop.classList.replace('opacity-100', 'opacity-0');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-transition').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
